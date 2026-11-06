@@ -1,0 +1,30 @@
+%% Overall framework (Fig. 2, Section 3.1)
+%% Render:  npx -y @mermaid-js/mermaid-cli -i figures/framework.mmd -o figures/framework.pdf -b white -s 2
+%% (or -o figures/framework.png -w 1400 -b white for a raster fallback)
+flowchart TB
+    P["Photo Training<br/>1,349 photos"]
+    S["Style Pool<br/>10 external paintings"]
+
+    P --> O["Original<br/>1,349"]
+    P --> A["+AdaIN<br/>2,698"]
+    P --> U["+Ours<br/>2,698"]
+    S --> A
+    S --> U
+
+    O --> R["ResNet-18<br/>shared model and budget"]
+    A --> R
+    U --> R
+
+    R --> E["Photo Test<br/>Art, Cartoon, Sketch"]
+
+    classDef cOrig fill:#5B7C99,color:#FFFFFF,stroke-width:0px
+    classDef cAdain fill:#C98B5B,color:#FFFFFF,stroke-width:0px
+    classDef cOurs  fill:#5B9C85,color:#FFFFFF,stroke-width:0px
+    classDef cSrc   fill:#EEF2F6,color:#1F3350,stroke:#9DB4CC
+    classDef cOut   fill:#FFFFFF,color:#1F3350,stroke:#1F3350,stroke-width:1.2px
+
+    class O cOrig
+    class A cAdain
+    class U cOurs
+    class P,S cSrc
+    class R,E cOut

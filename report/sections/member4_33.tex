@@ -1,0 +1,14 @@
+% Member 4 - Section 3.3 ResNet-18 Baseline
+\subsection{ResNet-18 Baseline}
+\label{sec:resnet_baseline}
+
+We use ResNet-18~\cite{he2016resnet} as the classifier for all groups. It is the standard backbone for PACS-style domain generalization studies, and its moderate size fits our single-GPU compute budget while leaving room for multi-seed replication.
+
+The network is initialized with ImageNet-pretrained weights, and the final fully connected layer is replaced with a seven-way classifier head. All layers are fine-tuned jointly. Pretraining matters in our setting: Photo Training has only 1{,}349 images, and training the same architecture from scratch on this amount of data yields a weak baseline that would compress the dynamic range of all comparisons.
+
+\textit{Input transforms.} Training uses RandomResizedCrop to $224\times224$ with scale $(0.7, 1.0)$ and a horizontal flip, followed by ImageNet normalization. Evaluation resizes the shorter side to 256, center-crops to $224\times224$, and applies the same normalization. We deliberately exclude photometric augmentation such as color jitter and grayscale: those transformations change style-related statistics, which is exactly the variable under study, so adding them to all groups would confound the comparison. Geometric augmentation only is applied, identically in all groups.
+
+\textit{Optimization.} All groups are trained with SGD (momentum 0.9, weight decay $5\times10^{-4}$, label smoothing 0.1~\cite{szegedy2016rethinking}), initial learning rate 0.01, batch size 64, and a cosine schedule~\cite{loshchilov2017sgdr} over a fixed step budget of 660 optimizer steps (Section~\ref{sec:exp_design}). We report the \textit{final} checkpoint of that budget, with no checkpoint selection on any validation split: we measured that selecting on Photo Validation accuracy inflates the seed-to-seed spread of cross-domain accuracy, and the measurement is reported in Section~\ref{sec:training_prep}. Target-domain test sets never influence training, checkpoint selection, or any hyperparameter choice.
+
+% TODO (Member 2): \subsection{AdaIN Style Augmentation}
+% TODO (Member 3): \subsection{Structure-Preserving Style Augmentation}

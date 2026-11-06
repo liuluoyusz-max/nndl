@@ -1,0 +1,37 @@
+Fixed external style pool for style augmentation.
+
+10 paintings, all from OUTSIDE the PACS dataset.
+
+Source: the official PyTorch AdaIN demo style set,
+https://github.com/naoto0804/pytorch-AdaIN/tree/master/input/style
+which is drawn from the WikiArt paintings collection used by the AdaIN paper
+(Huang and Belongie, ICCV 2017).  The AdaIN paper's content images come from
+MS COCO; this project uses the PACS Photo training split as content instead.
+
+Why these images and not PACS images:
+Art Painting, Cartoon and Sketch are the EVALUATION domains of this project.
+Drawing style references from them would put the test appearance into the
+training set, so the classifier could be scored on images whose style it had
+already seen during training.  Every style image here is therefore verified
+byte-disjoint from the local PACS copy by build_style_pool.py, which refuses
+to build a pool if any style image is a PACS image.
+
+The excluded image from the upstream demo set was `sketch.png`, because a
+sketch-like style reference is close to the PACS Sketch test domain.
+
+| file | style name used in the manifests |
+|---|---|
+| asheville.jpg | asheville |
+| brushstrokes.jpg | brushstrokes |
+| contrast_of_forms.jpg | contrast_of_forms |
+| flower_of_life.jpg | flower_of_life |
+| la_muse.jpg | la_muse |
+| mondrian.jpg | mondrian |
+| picasso_self_portrait.jpg | picasso_self_portrait |
+| scene_de_rue.jpg | scene_de_rue |
+| the_resevoir_at_poitiers.jpg | the_resevoir_at_poitiers |
+| woman_with_hat_matisse.jpg | woman_with_hat_matisse |
+
+Pairing uses seed 42.  Each Photo training image receives exactly one style,
+following the same seeded-shuffle-then-cyclic assignment that the generators
+use, so +AdaIN and +Ours receive the identical content->style pairing.

@@ -1,0 +1,15 @@
+% Member 4 - Section 3.6 Evaluation Metrics
+\subsection{Evaluation Metrics}
+\label{sec:evaluation_metrics}
+
+\textit{Classification accuracy.} We report top-1 accuracy on Photo Test (in-domain) and on each of Art Painting, Cartoon, and Sketch (cross-domain). The primary metric is the unweighted average of the three cross-domain accuracies. Every configuration is run with three training seeds; we report mean and standard deviation over seeds, and per-domain breakdowns are included so that effects which appear in only one domain are visible.
+
+\textit{Structure preservation.} To characterize the generated data rather than the classifier, we compare each stylized image with its content image using two measures. The first is LPIPS~\cite{zhang2018lpips}, a perceptual distance between the two images; larger values mean the stylization moved the image further from its content. The second is \textbf{EdgeScore}, an edge-consistency measure built from Canny edge maps~\cite{canny1986}. Writing $E_c$ and $E_s$ for the binary edge maps of the content and the stylized image, we report
+
+\[
+\text{EdgeScore} = \frac{2PR}{P+R}, \quad
+P = \frac{|E_c \cap E_s|}{|E_s|}, \quad
+R = \frac{|E_c \cap E_s|}{|E_c|},
+\]
+
+which is the F1-style overlap of the two edge maps: it is 1 when the stylized image reproduces all of the content's contours and falls as the stylization erases them. Note that this is an \textit{overlap}, not a difference: it is the harmonic mean of the fraction of stylized edges that coincide with a content edge (precision) and the fraction of content edges that survive in the stylized image (recall). A plain edge difference would score a stylization that adds many spurious edges but keeps the content's contours as poorly as one that erases them, whereas EdgeScore rewards agreement in both directions. Canny thresholds are held fixed across all images so that scores are comparable. These metrics describe how much structure the generated data removes; they are analysis metrics and do not enter training or model selection.

@@ -1,0 +1,72 @@
+% Member 4 - Section 5.2 Experiment Completion Plan
+\subsection{Experiment Completion Plan}
+\label{sec:completion_plan}
+
+The unified training and evaluation code is complete and validated on the local PACS copy, so the remaining experiment work is primarily GPU time. The plan below assumes the two generators are delivered by their owners in week 1; the frozen style pool they will use is already in place (Section~\ref{sec:exp_design}).
+
+\begin{itemize}
+\item \textit{Week 1: Experiment 1 and baseline replication.} \textit{Done.} The Original group has been run with seeds $\{0,1,2\}$ on the fixed 660-step budget, giving $99.0\pm0.3\%$ in-domain and $39.9\pm2.7\%$ cross-domain. The step budget was fixed before these runs (30 nominal passes over the training set). A diagnostic run to 1{,}320 steps, recorded but not used for tuning, shows that cross-domain accuracy fluctuates within a narrow band from the first evaluation onwards rather than improving systematically with more steps; the budget was therefore kept at 660 steps for all groups and every group reports its final checkpoint (Section~\ref{sec:resnet_baseline}). The remaining work in this week is to fix the checkpoint-selection policy, which we have done (Section~\ref{sec:resnet_baseline}), and to confirm the final protocol with the group.
+\item \textit{Week 2: Experiments 2 and 3.} Generate the two augmented datasets from the frozen style pool and run +AdaIN and +Ours with the same three seeds. Run the fairness checker on both augmented manifests before training.
+\item \textit{Week 3: Experiment 4 and ablation.} Sweep $\alpha \in \{0.25, 0.5, 0.75, 1.0\}$ for both methods on one seed, plus the $\beta$ sweep for the structure-preserving method; compute LPIPS and EdgeScore (Section~\ref{sec:evaluation_metrics}) on all generated datasets.
+\item \textit{Week 4: Replication and analysis.} Re-run the best configurations on the remaining seeds, assemble per-domain and per-class tables, and identify where structure preservation helps or fails.
+\end{itemize}
+
+Compute budget: one training run takes roughly 10 minutes on the project GPU (RTX 4070 Laptop, 8\,GB), so the full plan above totals approximately 15--20 GPU-hours including sweeps and reruns, which fits the available hardware within the schedule.
+
+% TODO (Member 5): 5.1, 5.4, 5.5
+
+%==================================================
+\begin{thebibliography}{00}
+
+\bibitem{zhou2023dgsurvey}
+K.~Zhou, Z.~Liu, Y.~Qiao, T.~Xiang, and C.~C.~Loy,
+``Domain generalization: A survey,''
+\textit{IEEE Trans. Pattern Anal. Mach. Intell.}, vol.~45, no.~4, pp.~4396--4415, 2023.
+
+\bibitem{zhou2021mixstyle}
+K.~Zhou, Y.~Yang, Y.~Qiao, and T.~Xiang,
+``Domain generalization with MixStyle,''
+in \textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2021.
+
+\bibitem{huang2017adain}
+X.~Huang and S.~Belongie,
+``Arbitrary style transfer in real-time with adaptive instance normalization,''
+in \textit{Proc. Int. Conf. Computer Vision (ICCV)}, 2017.
+
+\bibitem{li2017dg}
+D.~Li, Y.~Yang, Y.-Z.~Song, and T.~Hospedales,
+``Deeper, broader and artier domain generalization,''
+in \textit{Proc. Int. Conf. Computer Vision (ICCV)}, 2017.
+
+\bibitem{zhou2020dassl}
+K.~Zhou, ``Dassl: Domain adaptation and generalization library,''
+\url{https://github.com/KaiyangZhou/Dassl.pytorch}, accessed 2026.
+
+\bibitem{he2016resnet}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun,
+``Deep residual learning for image recognition,''
+in \textit{Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)}, pp.~770--778, 2016.
+
+\bibitem{zhang2018lpips}
+R.~Zhang, P.~Isola, A.~A.~Efros, E.~Shechtman, and O.~Wang,
+``The unreasonable effectiveness of deep features as a perceptual metric,''
+in \textit{Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)}, 2018.
+
+\bibitem{canny1986}
+J.~Canny,
+``A computational approach to edge detection,''
+\textit{IEEE Trans. Pattern Anal. Mach. Intell.}, vol.~8, no.~6, pp.~679--698, 1986.
+
+\bibitem{szegedy2016rethinking}
+C.~Szegedy, V.~Vanhoucke, S.~Ioffe, J.~Shlens, and Z.~Wojna,
+``Rethinking the inception architecture for computer vision,''
+in \textit{Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)}, 2016.
+
+\bibitem{loshchilov2017sgdr}
+I.~Loshchilov and F.~Hutter,
+``{SGDR}: Stochastic gradient descent with warm restarts,''
+in \textit{Proc. Int. Conf. Learning Representations (ICLR)}, 2017.
+
+\end{thebibliography}
+
+\end{document}

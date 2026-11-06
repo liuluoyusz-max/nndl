@@ -1,0 +1,204 @@
+{
+  "group": "original",
+  "seed": 0,
+  "tag": "diag_budget_s0",
+  "train_images": 1349,
+  "aug_manifest": null,
+  "config_hash": "6c3828e4d63f",
+  "training_config": {
+    "batch_size": 64,
+    "total_steps": 1320,
+    "lr": 0.01,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "label_smoothing": 0.1,
+    "eval_every": 60,
+    "train_transform": "Compose(\n    RandomResizedCrop(size=(224, 224), scale=(0.7, 1.0), ratio=(0.75, 1.3333), interpolation=bilinear, antialias=True)\n    RandomHorizontalFlip(p=0.5)\n    ToTensor()\n    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))\n)",
+    "eval_transform": "Compose(\n    Resize(size=256, interpolation=bilinear, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    ToTensor()\n    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))\n)",
+    "arch": "resnet18",
+    "pretrained": "imagenet",
+    "checkpoint_selection": "best photo_val accuracy"
+  },
+  "best_val_acc": 0.98,
+  "best_step": 300,
+  "total_steps": 1320,
+  "wall_time_sec": 1031.9,
+  "history": [
+    {
+      "step": 60,
+      "loss": 0.5470656156539917,
+      "val_acc": 0.9733333333333334,
+      "art_painting_test": 0.56787109375,
+      "cartoon_test": 0.1561433447098976,
+      "sketch_test": 0.2219959266802444
+    },
+    {
+      "step": 120,
+      "loss": 0.4714300334453583,
+      "val_acc": 0.9733333333333334,
+      "art_painting_test": 0.6025390625,
+      "cartoon_test": 0.21160409556313994,
+      "sketch_test": 0.22174134419551936
+    },
+    {
+      "step": 180,
+      "loss": 0.5052952170372009,
+      "val_acc": 0.9733333333333334,
+      "art_painting_test": 0.53076171875,
+      "cartoon_test": 0.15699658703071673,
+      "sketch_test": 0.17413441955193482
+    },
+    {
+      "step": 240,
+      "loss": 0.47050535678863525,
+      "val_acc": 0.9733333333333334,
+      "art_painting_test": 0.60888671875,
+      "cartoon_test": 0.22653583617747441,
+      "sketch_test": 0.23676171079429736
+    },
+    {
+      "step": 300,
+      "loss": 0.4701448678970337,
+      "val_acc": 0.98,
+      "art_painting_test": 0.59716796875,
+      "cartoon_test": 0.24232081911262798,
+      "sketch_test": 0.2904786150712831
+    },
+    {
+      "step": 360,
+      "loss": 0.4766887426376343,
+      "val_acc": 0.98,
+      "art_painting_test": 0.59912109375,
+      "cartoon_test": 0.22312286689419794,
+      "sketch_test": 0.21639511201629327
+    },
+    {
+      "step": 420,
+      "loss": 0.4900018572807312,
+      "val_acc": 0.98,
+      "art_painting_test": 0.6513671875,
+      "cartoon_test": 0.2640784982935154,
+      "sketch_test": 0.23879837067209775
+    },
+    {
+      "step": 480,
+      "loss": 0.4598872661590576,
+      "val_acc": 0.9733333333333334,
+      "art_painting_test": 0.60498046875,
+      "cartoon_test": 0.23165529010238908,
+      "sketch_test": 0.24363543788187372
+    },
+    {
+      "step": 540,
+      "loss": 0.46311092376708984,
+      "val_acc": 0.98,
+      "art_painting_test": 0.58447265625,
+      "cartoon_test": 0.20563139931740615,
+      "sketch_test": 0.1970468431771894
+    },
+    {
+      "step": 600,
+      "loss": 0.47980037331581116,
+      "val_acc": 0.98,
+      "art_painting_test": 0.5576171875,
+      "cartoon_test": 0.2696245733788396,
+      "sketch_test": 0.2645112016293279
+    },
+    {
+      "step": 660,
+      "loss": 0.4863862991333008,
+      "val_acc": 0.98,
+      "art_painting_test": 0.60888671875,
+      "cartoon_test": 0.22824232081911264,
+      "sketch_test": 0.1815173116089613
+    },
+    {
+      "step": 720,
+      "loss": 0.4670073688030243,
+      "val_acc": 0.98,
+      "art_painting_test": 0.62060546875,
+      "cartoon_test": 0.25426621160409557,
+      "sketch_test": 0.19679226069246436
+    },
+    {
+      "step": 780,
+      "loss": 0.47532540559768677,
+      "val_acc": 0.98,
+      "art_painting_test": 0.63671875,
+      "cartoon_test": 0.24189419795221842,
+      "sketch_test": 0.19475560081466395
+    },
+    {
+      "step": 840,
+      "loss": 0.45757079124450684,
+      "val_acc": 0.98,
+      "art_painting_test": 0.6376953125,
+      "cartoon_test": 0.24445392491467577,
+      "sketch_test": 0.20570264765784113
+    },
+    {
+      "step": 900,
+      "loss": 0.45743125677108765,
+      "val_acc": 0.98,
+      "art_painting_test": 0.62841796875,
+      "cartoon_test": 0.23677474402730375,
+      "sketch_test": 0.2074847250509165
+    },
+    {
+      "step": 960,
+      "loss": 0.4555594325065613,
+      "val_acc": 0.98,
+      "art_painting_test": 0.640625,
+      "cartoon_test": 0.2440273037542662,
+      "sketch_test": 0.2135947046843177
+    },
+    {
+      "step": 1020,
+      "loss": 0.4529927372932434,
+      "val_acc": 0.98,
+      "art_painting_test": 0.63232421875,
+      "cartoon_test": 0.24488054607508533,
+      "sketch_test": 0.225050916496945
+    },
+    {
+      "step": 1080,
+      "loss": 0.45608624815940857,
+      "val_acc": 0.98,
+      "art_painting_test": 0.63427734375,
+      "cartoon_test": 0.2380546075085324,
+      "sketch_test": 0.20061099796334012
+    },
+    {
+      "step": 1140,
+      "loss": 0.46051353216171265,
+      "val_acc": 0.98,
+      "art_painting_test": 0.63232421875,
+      "cartoon_test": 0.2380546075085324,
+      "sketch_test": 0.20773930753564154
+    },
+    {
+      "step": 1200,
+      "loss": 0.45323675870895386,
+      "val_acc": 0.98,
+      "art_painting_test": 0.6298828125,
+      "cartoon_test": 0.23890784982935154,
+      "sketch_test": 0.20952138492871691
+    },
+    {
+      "step": 1260,
+      "loss": 0.45275813341140747,
+      "val_acc": 0.98,
+      "art_painting_test": 0.64306640625,
+      "cartoon_test": 0.25341296928327645,
+      "sketch_test": 0.2059572301425662
+    },
+    {
+      "step": 1320,
+      "loss": 0.5904147624969482,
+      "val_acc": 0.98,
+      "art_painting_test": 0.64306640625,
+      "cartoon_test": 0.2598122866894198,
+      "sketch_test": 0.22836048879837068
+    }
+  ]
+}

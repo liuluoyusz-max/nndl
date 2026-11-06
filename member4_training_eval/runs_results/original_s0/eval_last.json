@@ -1,0 +1,11 @@
+{
+  "run": "C:\\Users\\qth02\\Desktop\\nndl_project\\runs\\original_s0",
+  "checkpoint": "last.pt",
+  "config_hash": "fc51fe8f3e55",
+  "photo_val": 0.9666666666666667,
+  "photo_test": 0.9883040935672515,
+  "art_painting_test": 0.623046875,
+  "cartoon_test": 0.23037542662116042,
+  "sketch_test": 0.26807535641547864,
+  "cross_domain_avg": 0.3738325526788797
+}
