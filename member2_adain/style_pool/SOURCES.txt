@@ -1,0 +1,15 @@
+Fixed external style pool for AdaIN augmentation.
+
+Source dataset used by the AdaIN paper: WikiArt paintings, about 80,000 images,
+distributed for this line of work through the Kaggle Painter by Numbers competition.
+Content images for this project stay the PACS Photo training split, not MS COCO.
+
+This folder keeps 10 style images from the official PyTorch AdaIN demo set:
+https://github.com/naoto0804/pytorch-AdaIN/tree/master/input/style
+
+Excluded on purpose:
+- sketch.png, because it is close to the PACS Sketch test domain
+- cropped duplicates of mondrian.jpg and woman_in_peasant_dress.jpg
+- every image under data/images, including PACS Art, Cartoon, and Sketch
+
+Pairing uses seed 42. Each Photo training image receives one style.

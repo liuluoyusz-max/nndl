@@ -12,7 +12,9 @@ before decoding:
 
 alpha may be a scalar in [0, 1] or a spatial map. A map is resized to the
 relu4_1 feature resolution and applied as alpha * AdaIN(content, style)
-+ (1 - alpha) * content. Weights are the public AdaIN encoder and decoder.
++ (1 - alpha) * content. The generation scripts default to four scalar
+strengths, 0.25, 0.5, 0.75 and 1.0 (adain_paths.STYLE_ALPHAS). Weights are
+the public AdaIN encoder and decoder.
 """
 import shutil
 import urllib.request

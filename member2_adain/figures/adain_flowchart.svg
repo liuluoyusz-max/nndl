@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="760" viewBox="0 0 920 760">
+  <rect width="920" height="760" fill="#ffffff"/>
+  <text x="460" y="36" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#1f2933">AdaIN style augmentation</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1f2933">
+    <rect x="70" y="70" width="250" height="64" rx="8" fill="#e8f1fb" stroke="#3d5a80"/>
+    <text x="195" y="96" text-anchor="middle">Photo training image</text>
+    <text x="195" y="116" text-anchor="middle">photo_train.txt, 1349 images</text>
+    <rect x="600" y="70" width="250" height="64" rx="8" fill="#fde8d0" stroke="#b86e00"/>
+    <text x="725" y="96" text-anchor="middle">Style image</text>
+    <text x="725" y="116" text-anchor="middle">style_pool, 10 paintings</text>
+    <rect x="70" y="190" width="250" height="64" rx="8" fill="#eef2f5" stroke="#52606d"/>
+    <text x="195" y="216" text-anchor="middle">VGG encoder to relu4_1</text>
+    <text x="195" y="236" text-anchor="middle">content features</text>
+    <rect x="600" y="190" width="250" height="64" rx="8" fill="#eef2f5" stroke="#52606d"/>
+    <text x="725" y="216" text-anchor="middle">VGG encoder to relu4_1</text>
+    <text x="725" y="236" text-anchor="middle">style features</text>
+    <rect x="300" y="320" width="320" height="72" rx="8" fill="#e7f6ef" stroke="#0f7b4c"/>
+    <text x="460" y="348" text-anchor="middle">AdaIN</text>
+    <text x="460" y="370" text-anchor="middle">match content mean and variance to style</text>
+    <rect x="250" y="450" width="420" height="72" rx="8" fill="#f7e8f4" stroke="#8a3d6f"/>
+    <text x="460" y="478" text-anchor="middle">alpha blend</text>
+    <text x="460" y="500" text-anchor="middle">alpha * AdaIN + (1 - alpha) * content features</text>
+    <rect x="300" y="580" width="320" height="56" rx="8" fill="#eef2f5" stroke="#52606d"/>
+    <text x="460" y="614" text-anchor="middle">Decoder to RGB image</text>
+    <rect x="220" y="680" width="480" height="56" rx="8" fill="#e8f1fb" stroke="#3d5a80"/>
+    <text x="460" y="704" text-anchor="middle">Stylized training image, original class label kept</text>
+    <text x="460" y="724" text-anchor="middle">data/aug_adain</text>
+  </g>
+  <g stroke="#52606d" stroke-width="1.6" fill="none">
+    <path d="M195 134 V190"/>
+    <path d="M725 134 V190"/>
+    <path d="M195 254 V292 H430 V320"/>
+    <path d="M725 254 V292 H490 V320"/>
+    <path d="M460 392 V450"/>
+    <path d="M460 522 V580"/>
+    <path d="M460 636 V680"/>
+  </g>
+</svg>

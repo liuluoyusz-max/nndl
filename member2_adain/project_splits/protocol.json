@@ -1,0 +1,95 @@
+{
+  "data_root": "C:\\Users\\10269\\Desktop\\nndl图片风格\\data",
+  "seed": 42,
+  "validation_fraction_of_official_train": 0.1,
+  "photo_test_source": "photo_crossval_kfold.txt",
+  "protocol": "Custom single-source Photo-only; not original multi-source PACS protocol",
+  "overlap_check": "Zero shared relative paths across all six project splits; not a visual duplicate check",
+  "exclusions": "Only images present in the inspected usable inventory are included",
+  "splits": [
+    {
+      "split": "photo_train",
+      "count": 1349,
+      "class_counts": {
+        "1": 153,
+        "2": 163,
+        "3": 147,
+        "4": 150,
+        "5": 161,
+        "6": 226,
+        "7": 349
+      },
+      "sha256": "b2d8fd9acc213aa9b021053bc86c8c4663559d510d5d845ba6d2541f705be0da"
+    },
+    {
+      "split": "photo_val",
+      "count": 150,
+      "class_counts": {
+        "1": 17,
+        "2": 18,
+        "3": 16,
+        "4": 17,
+        "5": 18,
+        "6": 25,
+        "7": 39
+      },
+      "sha256": "4f02cd7b4fe46080c191c8c10b76acd68e938d79e080c1a61bdf7fc15483a5d7"
+    },
+    {
+      "split": "photo_test",
+      "count": 171,
+      "class_counts": {
+        "1": 19,
+        "2": 21,
+        "3": 19,
+        "4": 19,
+        "5": 20,
+        "6": 29,
+        "7": 44
+      },
+      "sha256": "651453363dcab09f20f29367e00fa30ce30a9cca899f42232a716669189cffc6"
+    },
+    {
+      "split": "art_painting_test",
+      "count": 2048,
+      "class_counts": {
+        "1": 379,
+        "2": 255,
+        "3": 285,
+        "4": 184,
+        "5": 201,
+        "6": 295,
+        "7": 449
+      },
+      "sha256": "70e2aa7a2c4b79ee9539a25d976ef5b83f60801cd8fef7a560210157f436dd73"
+    },
+    {
+      "split": "cartoon_test",
+      "count": 2344,
+      "class_counts": {
+        "1": 389,
+        "2": 457,
+        "3": 346,
+        "4": 135,
+        "5": 324,
+        "6": 288,
+        "7": 405
+      },
+      "sha256": "592a2a581069606b108b5fd3dfeeba412417da041d90a7fdc1203833e37a7e49"
+    },
+    {
+      "split": "sketch_test",
+      "count": 3928,
+      "class_counts": {
+        "1": 771,
+        "2": 740,
+        "3": 753,
+        "4": 608,
+        "5": 816,
+        "6": 80,
+        "7": 160
+      },
+      "sha256": "f99d8bdf86687eaa3a5b2c6453914a406cdc64e5c77aab2329cfc8293c7b5831"
+    }
+  ]
+}
