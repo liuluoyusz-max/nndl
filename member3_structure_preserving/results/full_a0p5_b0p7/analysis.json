@@ -1,0 +1,24 @@
+{
+  "alpha": 0.5,
+  "beta": 0.7,
+  "manifest": "data/aug_sp/manifest_ours.txt",
+  "count": 1349,
+  "partial": false,
+  "pool_hash": "72cdbadb8970",
+  "ours": {
+    "edge_score": null,
+    "lpips": null,
+    "mean_alpha": {
+      "mean": 0.37357189900085075,
+      "std": 0.02729336867695456,
+      "n": 1349
+    }
+  },
+  "adain": {
+    "edge_score": null,
+    "lpips": null,
+    "mean_alpha": null
+  },
+  "lpips_enabled": false,
+  "note": "Image diagnostics only; cross-domain classification gains have not been measured."
+}

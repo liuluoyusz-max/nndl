@@ -1,0 +1,51 @@
+[
+  {
+    "class": "dog",
+    "original": "photo/dog/056_0022.jpg",
+    "figure": "figures/dog_comparison.png",
+    "alpha": 0.5,
+    "beta": 0.7
+  },
+  {
+    "class": "elephant",
+    "original": "photo/elephant/064_0022.jpg",
+    "figure": "figures/elephant_comparison.png",
+    "alpha": 0.5,
+    "beta": 0.7
+  },
+  {
+    "class": "giraffe",
+    "original": "photo/giraffe/084_0020.jpg",
+    "figure": "figures/giraffe_comparison.png",
+    "alpha": 0.5,
+    "beta": 0.7
+  },
+  {
+    "class": "guitar",
+    "original": "photo/guitar/063_0024.jpg",
+    "figure": "figures/guitar_comparison.png",
+    "alpha": 0.5,
+    "beta": 0.7
+  },
+  {
+    "class": "horse",
+    "original": "photo/horse/105_0018.jpg",
+    "figure": "figures/horse_comparison.png",
+    "alpha": 0.5,
+    "beta": 0.7
+  },
+  {
+    "class": "house",
+    "original": "photo/house/pic_001.jpg",
+    "figure": "figures/house_comparison.png",
+    "alpha": 0.5,
+    "beta": 0.7
+  },
+  {
+    "class": "person",
+    "original": "photo/person/253_0045.jpg",
+    "figure": "figures/person_comparison.png",
+    "alpha": 0.5,
+    "beta": 0.7
+  }
+]

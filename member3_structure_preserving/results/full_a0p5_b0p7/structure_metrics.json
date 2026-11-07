@@ -1,0 +1,11 @@
+{
+  "manifest": "data\\aug_sp\\manifest_ours.txt",
+  "lpips": null,
+  "edge_consistency": {
+    "mean": 0.3436216071323155,
+    "std": 0.06277086355954728,
+    "n": 1349
+  },
+  "lpips_available": false,
+  "note": "lpips package not installed; install with `pip install lpips` to complete the metric set"
+}

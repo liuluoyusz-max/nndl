@@ -3,6 +3,24 @@
 NNDL 课程小组项目仓库。Topic: single-source (Photo-only) cross-domain image
 classification on PACS with structure-preserving style augmentation.
 
+## Member 3 implementation
+
+Member 3 uses member 2's AdaIN core from commit
+`416bdc9811d67aae80fd79e8fac1ae0f37d5f339`. See
+[`member3_structure_preserving/README.md`](member3_structure_preserving/README.md)
+for setup and [`member2_adain/IMPORT_NOTES.md`](member2_adain/IMPORT_NOTES.md)
+for the imported files and their provenance.
+
+Member 3 and member 4 share `data/PACS/` for original images. Member 3 writes
+its deliverable to `data/aug_sp/` and exports a member-4-compatible manifest
+at `data/augmented/manifest_ours.txt`, pointing to the same generated images.
+Set `NNDL_DATA_ROOT` to use another data directory. The dataset itself is not
+included in the repository.
+
+Member 3's checked-in [results](member3_structure_preserving/results/README.md)
+contain generation manifests, audit records, structural metrics, and the beta
+pilot. Seven real PACS comparison panels are in `member3_structure_preserving/figures/`.
+
 ## Repository layout — one folder per member
 
 | Folder | Owner | Contents |

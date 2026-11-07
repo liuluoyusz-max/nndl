@@ -1,0 +1,8 @@
+# Install torch and torchvision together for the desired CPU/CUDA platform.
+torch
+torchvision
+numpy
+Pillow
+opencv-python
+scipy
+# Optional structure metric: pip install lpips

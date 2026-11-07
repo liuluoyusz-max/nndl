@@ -1,0 +1,165 @@
+{
+  "runs": [
+    {
+      "alpha": 0.5,
+      "beta": 0.0,
+      "manifest": "data/aug_sp/sweeps/sweep_n7/a0p5_b0p0/manifest_ours.txt",
+      "count": 7,
+      "partial": true,
+      "pool_hash": "72cdbadb8970",
+      "ours": {
+        "edge_score": {
+          "mean": 0.358886524397455,
+          "std": 0.03471356209078508,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": {
+          "mean": 0.5,
+          "std": 0.0,
+          "n": 7
+        }
+      },
+      "adain": {
+        "edge_score": {
+          "mean": 0.358886524397455,
+          "std": 0.03471356209078508,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": null
+      },
+      "lpips_enabled": false,
+      "note": "Image diagnostics only; cross-domain classification gains have not been measured."
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.3,
+      "manifest": "data/aug_sp/sweeps/sweep_n7/a0p5_b0p3/manifest_ours.txt",
+      "count": 7,
+      "partial": true,
+      "pool_hash": "72cdbadb8970",
+      "ours": {
+        "edge_score": {
+          "mean": 0.3692463425078704,
+          "std": 0.034086839143364016,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": {
+          "mean": 0.4469201905386789,
+          "std": 0.013044329484921307,
+          "n": 7
+        }
+      },
+      "adain": {
+        "edge_score": {
+          "mean": 0.358886524397455,
+          "std": 0.03471356209078508,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": null
+      },
+      "lpips_enabled": false,
+      "note": "Image diagnostics only; cross-domain classification gains have not been measured."
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.5,
+      "manifest": "data/aug_sp/sweeps/sweep_n7/a0p5_b0p5/manifest_ours.txt",
+      "count": 7,
+      "partial": true,
+      "pool_hash": "72cdbadb8970",
+      "ours": {
+        "edge_score": {
+          "mean": 0.37517208827506154,
+          "std": 0.033206667920932374,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": {
+          "mean": 0.41153365799358915,
+          "std": 0.02174056340713889,
+          "n": 7
+        }
+      },
+      "adain": {
+        "edge_score": {
+          "mean": 0.358886524397455,
+          "std": 0.03471356209078508,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": null
+      },
+      "lpips_enabled": false,
+      "note": "Image diagnostics only; cross-domain classification gains have not been measured."
+    },
+    {
+      "alpha": 0.5,
+      "beta": 0.7,
+      "manifest": "data/aug_sp/sweeps/sweep_n7/a0p5_b0p7/manifest_ours.txt",
+      "count": 7,
+      "partial": true,
+      "pool_hash": "72cdbadb8970",
+      "ours": {
+        "edge_score": {
+          "mean": 0.37943308004086473,
+          "std": 0.032788714780779715,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": {
+          "mean": 0.3761471211910248,
+          "std": 0.030436761960894895,
+          "n": 7
+        }
+      },
+      "adain": {
+        "edge_score": {
+          "mean": 0.358886524397455,
+          "std": 0.03471356209078508,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": null
+      },
+      "lpips_enabled": false,
+      "note": "Image diagnostics only; cross-domain classification gains have not been measured."
+    },
+    {
+      "alpha": 0.5,
+      "beta": 1.0,
+      "manifest": "data/aug_sp/sweeps/sweep_n7/a0p5_b1p0/manifest_ours.txt",
+      "count": 7,
+      "partial": true,
+      "pool_hash": "72cdbadb8970",
+      "ours": {
+        "edge_score": {
+          "mean": 0.3913493971007426,
+          "std": 0.03592542028293309,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": {
+          "mean": 0.32306732875960215,
+          "std": 0.043481124610628946,
+          "n": 7
+        }
+      },
+      "adain": {
+        "edge_score": {
+          "mean": 0.358886524397455,
+          "std": 0.03471356209078508,
+          "n": 7
+        },
+        "lpips": null,
+        "mean_alpha": null
+      },
+      "lpips_enabled": false,
+      "note": "Image diagnostics only; cross-domain classification gains have not been measured."
+    }
+  ],
+  "automatic_selection": false
+}

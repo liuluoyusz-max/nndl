@@ -19,8 +19,8 @@ CODE_ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = CODE_ROOT.parent
 import os
 DATA_ROOT = Path(os.environ.get(
-    "NNDL_DATA_ROOT", r"C:\Users\qth02\Desktop\nndl_pacs\data"))
-# Set NNDL_DATA_ROOT to <your copy of member1_data>/data on another machine.
+    "NNDL_DATA_ROOT", PROJECT_ROOT / "data"))
+# Shared local layout: <project>/data/PACS. NNDL_DATA_ROOT overrides data/.
 IMAGE_ROOT = DATA_ROOT / "PACS"          # member 1's layout: images under data/PACS
 SPLIT_DIR = CODE_ROOT / "project_splits"
 OUTPUT_ROOT = PROJECT_ROOT / "runs"

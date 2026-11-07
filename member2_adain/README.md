@@ -2,6 +2,10 @@
 
 Owner: member 2. AdaIN generator and style-transfer implementation.
 
+当前目录已加入成员2原版 `adain.py`，供成员3的结构保持模块复用；权重缺失时会尝试自动下载。
+见 [IMPORT_NOTES.md](IMPORT_NOTES.md) 了解来源及本地参考内容。
+下面的 expected contents 是主分支原有的交付计划，实际文件以导入记录为准。
+
 Expected contents (member 2 to fill in):
 
 - `adain.py` — AdaIN model, fixed interface `stylize(content, style, alpha)`

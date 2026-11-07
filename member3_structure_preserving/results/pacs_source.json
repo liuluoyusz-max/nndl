@@ -1,0 +1,10 @@
+{
+  "url": "https://drive.google.com/file/d/1m4X4fROCCXMO0lRLrr6Zz9Vb3974NWhE/view",
+  "archive_bytes": 184283016,
+  "archive_sha256": "0dc9d0176fa27c9b4504e7c2e962aebe6a79ed0c1819b84148786e590f87e102",
+  "extracted": {
+    "images": 9991,
+    "original_splits": 12
+  },
+  "images_root": "data/PACS"
+}

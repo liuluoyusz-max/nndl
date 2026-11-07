@@ -1,0 +1,39 @@
+% Member 3 method draft; include after the member-2 AdaIN method when integrating.
+\subsection{Structure-Preserving Style Augmentation}
+\label{sec:structure_preserving}
+
+We reuse the frozen normalized VGG encoder and decoder of the AdaIN generator~\cite{huang2017adain}.
+Our change is a spatial mixing strength computed from the content image alone.
+The content image is resized using the same shorter-side rule as standard AdaIN.
+We convert it to grayscale, apply Gaussian smoothing with $\sigma=1$, and compute
+the magnitude $g$ of its two Sobel responses. We normalize $g$ by its per-image
+95th percentile and clip it to $[0,1]$. If that percentile is zero for a sparse
+edge image, we use the maximum response; constant images receive a zero map.
+A $3\times3$ maximum filter followed by Gaussian smoothing with $\sigma=2$
+produces a soft structure map $M\in[0,1]$.
+
+For base style strength $\alpha_0$ and protection parameter $\beta$, we set
+\[
+\alpha(x,y)=\alpha_0\bigl(1-\beta M(x,y)\bigr),
+\qquad \alpha_0,\beta\in[0,1].
+\]
+We area-average this map to the encoder's \texttt{relu4\_1} resolution, obtaining
+$\alpha_f$. With content features $F_c$ and style features $F_s$, the decoder receives
+\[
+F=\alpha_f\odot\operatorname{AdaIN}(F_c,F_s)
+ +(1-\alpha_f)\odot F_c.
+\]
+Thus strong structural responses retain a larger contribution from the content
+features. At $\beta=0$, this expression reduces to ordinary constant-strength
+AdaIN, providing an implementation control. At $\alpha_0=0$, the output is a
+decoder reconstruction, rather than a pixel-identical copy of the content image.
+
+Both generators use the same frozen external style pool, content--style pairing,
+input sizes, and JPEG quality. The initial implementation uses $\alpha_0=0.5$
+and $\beta=0.7$; the latter is a starting setting, not an experimentally selected
+optimum. The structure map is an edge-based proxy: it also responds to background
+texture and does not identify object foreground. Furthermore, local protection
+reduces average style strength. A mean-strength-matched uniform control would
+be needed to isolate the effect of spatial placement from reduced stylization.
+We therefore treat generated-image metrics as descriptive evidence and reserve
+claims of classification benefit for the controlled cross-domain experiments.

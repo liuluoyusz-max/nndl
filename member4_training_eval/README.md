@@ -15,7 +15,7 @@ pip install lpips     # 可选，3.6 的 LPIPS 指标需要；缺失时脚本会
 数据根目录在 `config.py` 里配置：
 
 ```python
-DATA_ROOT   = r"C:\Users\qth02\Desktop\nndl_pacs\data"
+DATA_ROOT   = PROJECT_ROOT / "data"  # 可用 NNDL_DATA_ROOT 环境变量覆盖
 IMAGE_ROOT  = DATA_ROOT / "PACS"      # 原始图片
 AUG_ROOT    = DATA_ROOT / "augmented"  # 风格化图片（成员2/3 产出）
 ```

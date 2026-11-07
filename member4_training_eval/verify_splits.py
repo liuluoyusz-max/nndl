@@ -24,7 +24,7 @@ SPLITS = ("photo_train", "photo_val", "photo_test",
 ROOT = Path(__file__).resolve().parent
 SPLIT_DIR = ROOT / "project_splits"
 IMAGE_ROOT = Path(os.environ.get(
-    "NNDL_DATA_ROOT", r"C:\Users\qth02\Desktop\nndl_pacs\data")) / "PACS"
+    "NNDL_DATA_ROOT", ROOT.parent / "data")) / "PACS"
 PROTOCOL = SPLIT_DIR / "protocol.json"
 
 
