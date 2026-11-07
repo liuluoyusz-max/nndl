@@ -1,0 +1,25 @@
+% Exactly three current-status bullets for the progress report.
+\subsection{Structure-Preserving Method Progress}
+\label{sec:m3_current_status}
+\begin{itemize}
+\item \textit{Implementation completed.} We implemented the soft Sobel structure
+map, adaptive strength $\alpha_0(1-\beta M)$, feature-level AdaIN mixing, batch
+generation, diagnostic panels, and parameter sweeps on top of the pinned member-2
+interface. Twelve automated tests passed, including constant-image handling,
+parameter boundaries, recovery from corrupt outputs, manifest compatibility,
+and equivalence between $\beta=0$ and ordinary AdaIN.
+
+\item \textit{Full training augmentation delivered locally.} The generator
+produced 1,349 real Photo Training augmentations in \texttt{data/aug\_sp/} at
+$\alpha_0=0.5$, $\beta=0.7$. All outputs were decoded and checked for labels,
+frozen pairings, input/output hashes, and manifest consistency. Two-column and
+six-column manifests are available; the latter is directly readable by member 4.
+Seven class examples with structure and strength maps are included in the handoff.
+
+\item \textit{Analysis prepared; classification evaluation pending.} The full
+set has EdgeScore $0.3436\pm0.0628$ over 1,349 images, where the spread is across
+images, not classifier seeds. A five-value $\beta$ pilot was completed on seven
+dog images; it demonstrates the generation workflow and is not a full ablation.
+LPIPS and augmented-group classification results remain pending. Code, figures,
+manifests, audit records, and the ablation plan are ready for integration.
+\end{itemize}

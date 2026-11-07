@@ -1,0 +1,75 @@
+{
+  "original": "photo/guitar/063_0024.jpg",
+  "alpha0": 0.5,
+  "beta": 0.7,
+  "structure_config": {
+    "preblur_sigma": 1.0,
+    "edge_quantile": 0.95,
+    "dilation_radius": 1,
+    "map_blur_sigma": 2.0
+  },
+  "content_size": [
+    512,
+    512
+  ],
+  "map_range": [
+    0,
+    1
+  ],
+  "alpha_range": [
+    0.15002688765525818,
+    0.5
+  ],
+  "comparisons": [
+    {
+      "original": "photo/dog/056_0022.jpg",
+      "style": "scene_de_rue",
+      "figure": "figures/examples/dog_comparison.png",
+      "alpha0": 0.5,
+      "beta": 0.7
+    },
+    {
+      "original": "photo/elephant/064_0022.jpg",
+      "style": "the_resevoir_at_poitiers",
+      "figure": "figures/examples/elephant_comparison.png",
+      "alpha0": 0.5,
+      "beta": 0.7
+    },
+    {
+      "original": "photo/giraffe/084_0020.jpg",
+      "style": "woman_with_hat_matisse",
+      "figure": "figures/examples/giraffe_comparison.png",
+      "alpha0": 0.5,
+      "beta": 0.7
+    },
+    {
+      "original": "photo/guitar/063_0024.jpg",
+      "style": "the_resevoir_at_poitiers",
+      "figure": "figures/examples/guitar_comparison.png",
+      "alpha0": 0.5,
+      "beta": 0.7
+    },
+    {
+      "original": "photo/horse/105_0018.jpg",
+      "style": "the_resevoir_at_poitiers",
+      "figure": "figures/examples/horse_comparison.png",
+      "alpha0": 0.5,
+      "beta": 0.7
+    },
+    {
+      "original": "photo/house/pic_001.jpg",
+      "style": "mondrian",
+      "figure": "figures/examples/house_comparison.png",
+      "alpha0": 0.5,
+      "beta": 0.7
+    },
+    {
+      "original": "photo/person/253_0045.jpg",
+      "style": "scene_de_rue",
+      "figure": "figures/examples/person_comparison.png",
+      "alpha0": 0.5,
+      "beta": 0.7
+    }
+  ],
+  "matplotlib_version": "3.11.2"
+}

@@ -1,0 +1,52 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[letterpaper,left=0.75in,right=0.75in,top=0.7in,bottom=0.75in,columnsep=0.25in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,url}
+\graphicspath{{figures/}}
+\title{Member 3: Structure-Preserving Augmentation\\Report Handoff}
+\author{NNDL Project -- Member 3 Materials}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+This handoff contains the related-work and method drafts, three current-status
+bullets, the ablation plan, and standalone figures. Logical placement is 2.4,
+3.5, 4.3, and 5.3 in the group report. Full augmentation generation is complete;
+classification evaluation and LPIPS remain pending.
+\end{abstract}
+\setcounter{section}{1}
+\section{Related Work}
+\setcounter{subsection}{3}
+\input{sections/02_4_related_work.tex}
+\setcounter{section}{2}
+\section{Method}
+\setcounter{subsection}{4}
+\input{sections/03_5_method.tex}
+\setcounter{section}{3}
+\section{Progress / Current Status}
+\setcounter{subsection}{2}
+\input{sections/04_3_current_status.tex}
+\setcounter{section}{4}
+\section{Next Steps and Plan for Completion}
+\setcounter{subsection}{2}
+\input{sections/05_3_ablation_plan.tex}
+\bibliographystyle{plain}
+\bibliography{references}
+\clearpage
+\onecolumn
+\section*{Supplementary Figure Material}
+\begin{center}
+\includegraphics[width=0.64\textwidth]{m3_alpha_rule.png}
+\end{center}
+\noindent\textbf{Analytical strength rule.} Fixed base strength is 0.5. Larger
+$\beta$ lowers local strength where the structure response is stronger.
+\begin{center}
+\includegraphics[width=0.88\textwidth]{m3_beta_pilot.png}
+\end{center}
+\noindent\textbf{Pilot only.} Seven dog images; error bars are image-level standard
+deviations. This pilot does not establish an optimal parameter or a classification gain.
+\begin{center}
+\includegraphics[width=\textwidth]{m3_guitar_comparison.png}
+\end{center}
+\noindent\textbf{Qualitative example.} Content, style, structure response, spatial
+alpha, matched ordinary AdaIN, and structure-preserving output. This is not a classifier result.
+\end{document}

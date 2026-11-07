@@ -22,3 +22,7 @@ augmented/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local PDF build / review artifacts (published preview lives in the handoff)
+/tmp/pdfs/
+/output/pdf/

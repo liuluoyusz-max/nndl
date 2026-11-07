@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "images": 1349,
+  "fully_decoded": 1349,
+  "classes": {
+    "dog": 153,
+    "elephant": 163,
+    "giraffe": 147,
+    "guitar": 150,
+    "horse": 161,
+    "house": 226,
+    "person": 349
+  },
+  "alpha": 0.5,
+  "beta": 0.7,
+  "frozen_pairing_verified": true,
+  "input_and_output_hashes_verified": true,
+  "member4_manifest_identical": true,
+  "two_column_dataset_readable": true,
+  "real_beta_zero_controls_identical": 7,
+  "generation_record_sha256": "778dc4f8ea4217220ffbab145245b17fc34a43eed1a8e1eda5deb1a737aa6b00",
+  "classification_training_run": false,
+  "source_generation_record_sha256": "0b8f575329c1acbbe42262ba25deb5a0911755f6127dd00cdb19ded5dd9770ee",
+  "note": "Published audit records use LF newlines. Full augmentation images and model weights remain outside Git."
+}

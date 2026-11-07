@@ -1,0 +1,33 @@
+% Intended placement: Section 2.4. Numbering is controlled by member 5.
+\subsection{Structure Preservation and Structure-Related Metrics}
+\label{sec:m3_related_structure}
+
+Style augmentation is useful only when the generated image retains the evidence
+supporting its content label. Gatys \textit{et al.} separate content and style
+using convolutional feature representations and feature correlations~\cite{gatys2016style}.
+AdaIN provides a feed-forward alternative by matching channel-wise feature means
+and variances~\cite{huang2017adain}. Its original formulation also permits spatial
+control. Our project uses an edge-derived spatial strength map as a lightweight
+content-preservation heuristic; we do not claim to introduce spatial control
+itself or to obtain a semantic foreground mask.
+
+Image gradients provide inexpensive local structural cues. Sobel derivatives
+approximate intensity changes along two axes~\cite{opencv_sobel}; their magnitude
+can indicate contours, but also responds to background texture. We therefore
+use a smoothed, normalized Sobel response to guide generation, while reserving
+Canny edges~\cite{canny1986} for a separate consistency analysis. This distinction
+keeps the generation map and evaluation procedure explicit. Neither detector
+establishes whether an edge is important for the object class.
+
+We examine generated images with complementary measures. LPIPS compares images
+through deep feature representations and was evaluated against human perceptual
+judgments~\cite{zhang2018lpips}; it is not a dedicated contour-preservation score.
+Our project-defined EdgeScore is the F1 overlap of fixed-threshold Canny edge maps,
+measuring how many content edges survive and how many generated edges agree with
+them. It is not a metric proposed by the Canny paper. Exact edge overlap is
+sensitive to small displacements and threshold choices, whereas LPIPS also
+responds to intended appearance changes. We interpret both alongside qualitative
+examples and the final classification experiment. Lower perceptual distance or
+higher edge overlap alone cannot demonstrate better cross-domain recognition:
+an almost unchanged photo may obtain favorable similarity scores while adding
+little style diversity.

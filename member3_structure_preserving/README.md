@@ -18,7 +18,9 @@
 
 方法为 `alpha(x,y) = alpha0 * (1 - beta * M(x,y))`。
 默认 `alpha0=0.5`，`beta=0.7` 是尚未选优的起始值；`beta=0` 与普通 AdaIN 完全一致。
-详见 [METHOD.md](METHOD.md)。报告方法草稿在 `../report/sections/member3_method.tex`，尚未插入总报告。
+详见 [METHOD.md](METHOD.md)。完整的2.4、3.5、4.3、5.3稿件、示意图、接口和BibTeX已集中到
+[给成员5的一次性交付包](handoff_member5/README.md)。`../report/sections/member3_method.tex`
+是3.5稿的兼容入口；总报告仍由成员5统一合并。
 
 ## 当前本机交付状态
 

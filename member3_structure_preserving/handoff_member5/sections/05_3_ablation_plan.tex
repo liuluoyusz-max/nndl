@@ -1,0 +1,46 @@
+% Member 3 contribution to Section 5.3; merge with member 4's training plan.
+\subsection{Ablation and Analysis Plan}
+\label{sec:m3_ablation_plan}
+
+\textit{Protection-strength ablation.} We will hold $\alpha_0=0.5$ fixed and
+generate $\beta\in\{0,0.3,0.5,0.7,1\}$ variants for the same 1,349 Photo Training
+images. The style pool, content--style pairing, map settings, input sizes,
+augmentation count, and image encoding will remain unchanged. The $\beta=0$
+case is ordinary AdaIN and serves as the implementation and experimental control.
+Member 3 provides images and manifests; member 4 performs classifier training and
+evaluation under the shared protocol. The existing seven-image, dog-only pilot
+checks execution and does not select an optimal $\beta$.
+
+\textit{Structure and appearance analysis.} For every variant, we will compute
+the fixed-threshold Canny EdgeScore and LPIPS, using the same preprocessing as
+Section~3.6. We will report means, image-level standard deviations, valid counts,
+and per-image differences relative to $\beta=0$. Empty-edge cases will remain
+undefined and their number will be disclosed. LPIPS is planned and has not yet
+been computed. Qualitative panels will use fixed $[0,1]$ map scales and matched
+content/style pairs across classes. We will inspect thin structures, textured
+backgrounds, and failures where the map protects irrelevant edges.
+
+\textit{Reduced-strength confound.} Increasing $\beta$ decreases average style
+strength as well as adding spatial modulation. A recommended additional control
+is uniform AdaIN with per-image strength
+\begin{equation}
+\bar\alpha_i=\frac{1}{H_fW_f}\sum_{u,v}\alpha_{f,i}(u,v).
+\label{eq:m3_mean_match}
+\end{equation}
+It uses the same content/style pair and decoder. This control is a proposed
+extension, not an output already produced by the current batch CLI. Comparing
+it with the spatial map would help separate the effect of where protection is
+applied from the effect of weaker stylization alone.
+
+\textit{Classifier analysis and parameter discipline.} Member 4 will use the
+shared ResNet-18, batch size 64, 660 optimizer steps, and final-checkpoint policy.
+A one-seed sweep can provide an exploratory budget; the primary comparison and
+any configurations used for a replicated claim will use seeds $\{0,1,2\}$.
+We will report Photo accuracy separately from the unweighted average of Art,
+Cartoon, and Sketch accuracies, with per-domain and relevant per-class results.
+Target-domain test data will not choose $\alpha$, $\beta$, map settings, or
+checkpoints. Any selection rule will be fixed in advance or use source validation
+only; the initial $\beta=0.7$ is retained as a predeclared setting. Higher EdgeScore
+or lower LPIPS will be treated as image analysis rather than proof of a classifier
+gain. A later alpha sweep may use $\{0.25,0.5,0.75,1\}$ with its beta held fixed
+to avoid confounding both factors in the main beta comparison.

@@ -21,6 +21,10 @@ Member 3's checked-in [results](member3_structure_preserving/results/README.md)
 contain generation manifests, audit records, structural metrics, and the beta
 pilot. Seven real PACS comparison panels are in `member3_structure_preserving/figures/`.
 
+The [one-time handoff to member 5](member3_structure_preserving/handoff_member5/README.md)
+collects report drafts for 2.4, 3.5, 4.3 and 5.3, formulas, standalone figures,
+the frozen interface contract, BibTeX, evidence, and a compiled PDF preview.
+
 ## Repository layout — one folder per member
 
 | Folder | Owner | Contents |

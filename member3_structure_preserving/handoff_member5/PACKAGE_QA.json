@@ -1,0 +1,21 @@
+{
+  "sections": [
+    "2.4",
+    "3.5",
+    "4.3",
+    "5.3"
+  ],
+  "pdf_pages": 4,
+  "resolved_citation_keys": 5,
+  "overfull_boxes": false,
+  "undefined_references": false,
+  "real_class_examples": 7,
+  "current_status_bullets": 3,
+  "lpips": "not_run",
+  "classifier_results": "pending",
+  "full_augmentation_images": 1349,
+  "beta_pilot_images": 7,
+  "beta_pilot_classes": [
+    "dog"
+  ]
+}
